@@ -1,8 +1,4 @@
 const container = document.getElementById("container")
-// const post = document.createElement("div")
-// post.setAttribute("class", "post")
-// console.log(post)
-
 
 function printPosts() {
     for (i = 0; i < posts.length; i++) {
@@ -39,12 +35,11 @@ function printPosts() {
     </div>
         `
     }
-
 }
 printPosts()
 
 const like = document.querySelectorAll('.like-button');
-const idArray = []
+const id = []
 for (let i = 0; i < like.length; i++) {
     like[i].addEventListener('click', () => {
 
@@ -59,13 +54,9 @@ for (let i = 0; i < like.length; i++) {
             posts[i].likes += +1
             const likesCounter = document.getElementById(`like-counter-${posts[i].id}`)
             likesCounter.innerHTML = `${posts[i].likes}`;
-            if (!idArray.includes(posts[i].id)) {
-                idArray.push(posts[i].id)
+            if (!id.includes(posts[i].id)) {
+                id.push(posts[i].id)
             }
         }
     })
 }
-
-
-
-
